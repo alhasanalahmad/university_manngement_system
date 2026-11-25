@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}<h2>{{title}}</h2>
+<form method="post" class="inlineform">
+{% for key,label in columns %}<label>{{label}}<input name="{{key}}" required></label>{% endfor %}
+<button>إضافة</button></form>
+<table><thead><tr>{% for key,label in columns %}<th>{{label}}</th>{% endfor %}</tr></thead>
+<tbody>{% for row in rows %}<tr>{% for key,label in columns %}<td>{{row[key]}}</td>{% endfor %}</tr>
+{% else %}<tr><td colspan="{{columns|length}}">لا توجد بيانات بعد</td></tr>{% endfor %}</tbody></table>{% endblock %}

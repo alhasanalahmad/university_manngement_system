@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<h2>إدارة التسجيلات</h2><form method="post" class="inlineform">
+<label>الطالب<select name="student_id">{% for s in students %}<option value="{{s.id}}">{{s.student_no}} - {{s.name}}</option>{% endfor %}</select></label>
+<label>المقرر<select name="course_id">{% for c in courses %}<option value="{{c.id}}">{{c.code}} - {{c.name}}</option>{% endfor %}</select></label>
+<button>تسجيل</button></form><table><tr><th>الطالب</th><th>المقرر</th></tr>
+{% for r in rows %}<tr><td>{{r.student}}</td><td>{{r.course}}</td></tr>{% else %}<tr><td colspan="2">لا توجد تسجيلات</td></tr>{% endfor %}</table>{% endblock %}

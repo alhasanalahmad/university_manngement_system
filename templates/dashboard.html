@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block content %}<h2>لوحة التحكم</h2><p>مرحباً {{session.username}}</p>
+<div class="cards">{% for key,value in counts.items() %}<div class="card"><strong>{{value}}</strong><span>{{key}}</span></div>{% endfor %}</div>{% endblock %}
